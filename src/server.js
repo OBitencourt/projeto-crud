@@ -1,31 +1,32 @@
 const express = require('express')
 const path = require('path')
 
+const db = require('./database/index')
+
 
 const app = express()
+
+// conexão com o banco de dados
+
+db.connect()
+
 
 // definindo template engine:
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
-
 // rota para caminhos estátios é criada automaticamente pelo ejs
 
 app.use(express.static(path.join(__dirname, 'public')))
-
 
 // habilita para receber dados de formulários pelo método post
 
 app.use(express.urlencoded({extended: true}))
 
-// rotas
+// routes
 
-app.get('/', (req, res) => {
-    res.render('index', {
-        title: 'Título Teste'
-    })
-})
+
 
 // 404 error (not found)
 
