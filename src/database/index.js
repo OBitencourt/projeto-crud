@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 function connect() {
 
-    mongoose.connect('mongodb://localhost:27017/')
+    mongoose.connect('mongodb://localhost:27017/projeto-crud')
     
     const db = mongoose.connection
     
