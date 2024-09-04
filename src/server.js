@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 
 const db = require('./database/index')
-
+const routes = require('./routes/index')
 
 const app = express()
 
@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended: true}))
 
 // routes
 
-
+app.use('/', routes)
 
 // 404 error (not found)
 
