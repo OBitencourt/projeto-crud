@@ -25,7 +25,7 @@ router.post('/edit/:id', CostumersController.edit)
 
 // remover
 
-
+router.get('/remove/:id', CostumersController.remove)
 
 
 module.exports = router

@@ -76,9 +76,17 @@ async function edit (req, res) {
         user: user,
         message: 'A Edição foi feita com sucesso!'
     })
-
 }
 
+async function remove (req, res) {
+    const { id } = req.params
+
+    const remove = await CostumersModel.deleteOne({ _id: id })
+
+    if (remove.deletedCount == 1) {
+        res.redirect('/list')
+    }
+}
 
 module.exports = {
     add,
@@ -86,4 +94,5 @@ module.exports = {
     list,
     formEdit,
     edit,
+    remove,
 }
