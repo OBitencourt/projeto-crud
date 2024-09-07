@@ -16,6 +16,16 @@ router.post('/register/add', CostumersController.add)
 
 // listar 
 
-router.get('/list', CostumersController.listUsers)
+router.get('/list', CostumersController.list)
+
+// editar
+
+router.get('/edit', CostumersController.formEdit)
+router.post('/edit/:id', CostumersController.edit)
+
+// remover
+
+
+
 
 module.exports = router
